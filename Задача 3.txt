@@ -1,0 +1,75 @@
+def add(q,w):
+    z = str('')
+    x = int(0)
+    for i in range(len(q)-1,-1,-1):
+        if((int(q[i])+int(w[i])+x)==0):
+            z+='0'
+            continue
+        if((int(q[i])+int(w[i])+x)==1):
+            if(x == 1):
+                x -=1
+            z += '1'
+            continue
+        if((int(q[i])+int(w[i])+x)==2):
+            if(x==0):
+                x += 1
+            z += '0'
+            continue
+        if((int(q[i])+int(w[i])+x)==3):
+            z += '1'
+            continue
+    if(x == 1):
+        z += '1'
+    return z[::-1]
+def minus(q,w):
+    z=str('')
+    x=int(0)
+    for i in range (len(q)-1,-1,-1):
+        if((int(q[i])-int(w[i]))==-1):
+            x+=1
+            z+='1'
+            continue
+        if((int(q[i])-int(w[i]))==0):
+            if(z==1):
+                x-=1
+                z+='1'
+                continue
+            z+='0'
+        if((int(q[i])-int(w[i]))==1):
+            if(z==1):
+                x-=1
+                z+='0'
+                continue
+            z+='1'
+    return z[::-1]
+def umn(q,w):
+    z=str('')
+    e=str('')
+    x=int(0)
+    for i in range(len(q)-1,-1,-1):
+        if((int(q[i])*int(w[i]))==0):
+            z+='0'
+            continue
+        if((int(q[i])*int(w[i]))==1):
+            if(z==1):
+                x-=1
+                z+='1'
+                continue
+            z+='1'
+        z=z+e
+    return z[::-1]
+a = int(input())
+b = int(input())
+a2 = ''
+b2 = ''
+while a > 0:
+    a2 = str(a % 2)+a2
+    a //= 2
+while b > 0:
+    b2 = str(b % 2)+b2
+    b //= 2
+print (a2)
+print (b2)
+print(add(a2,b2))
+print(minus(a2,b2))
+print(umn(a2,b2))

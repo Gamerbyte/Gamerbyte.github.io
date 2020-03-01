@@ -1,0 +1,22 @@
+from datetime import datetime,timedelta
+print('—егодн€шн€€ дата:   ')
+now = datetime.now()
+print (now)
+print (now.year)
+three = timedelta(days=3)
+print(three)
+a = input('¬ведите дату:   ')
+aa,bb,cc = map(int,a.split('-'))
+print(a)
+print(aa)
+print(bb)
+print(cc)
+
+date2 = timedelta(days=cc)
+print(date2.days)
+print(date2)
+date1 = datetime.date(aa,bb,cc)
+print(date1)
+
+p = now - timedelta(a[0],a[1],a[2])
+print("{} дней {} минут {} секунд".format(p.days, p.minutes, p.seconds))

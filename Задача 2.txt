@@ -1,0 +1,18 @@
+s = dict.fromkeys([id])
+print(s)
+i=0
+while True:
+    i+=1
+    y= str(input())
+    if y =='!':
+        break
+    else:
+        s[i,1] = y
+    y=str(input())
+    if y == '!':
+        break
+    else:
+        s[i,2] = y
+   
+for item in s.items():
+    print(item)
